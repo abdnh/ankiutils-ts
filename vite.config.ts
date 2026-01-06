@@ -10,7 +10,7 @@ export default defineConfig({
     plugins: [svelte()],
     build: {
         lib: {
-            entry: resolve(__dirname, "src/lib/main.js"),
+            entry: resolve(__dirname, "src/lib/index.js"),
             name: "AnkiUtils",
             fileName: "ankiutils",
         },
