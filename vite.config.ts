@@ -11,7 +11,7 @@ export default defineConfig({
     plugins: [svelte(), dts({ tsconfigPath: "./tsconfig.app.json", rollupTypes: true})],
     build: {
         lib: {
-            entry: resolve(__dirname, "src/index.js"),
+            entry: resolve(__dirname, "src/index.ts"),
             name: "AnkiUtils",
             fileName: "ankiutils",
         },
