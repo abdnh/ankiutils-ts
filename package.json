@@ -9,12 +9,7 @@
   "main": "dist/ankiutils.umd.cjs",
   "module": "dist/ankiutils.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/ankiutils.js",
-      "require": "./dist/ankiutils.umd.cjs"
-    }
-  },
+  
   "scripts": {
     "dev": "vite",
     "build": "vite build",

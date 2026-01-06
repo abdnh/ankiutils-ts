@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { pageTheme } from "ankiutils";
+    import { pageTheme } from "../theme.svelte";
 
     interface Props {
         label?: string;

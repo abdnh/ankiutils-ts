@@ -8,7 +8,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [svelte(), dts({ tsconfigPath: "./tsconfig.app.json", rollupTypes: false})],
+    plugins: [
+        svelte(),
+        dts({
+            tsconfigPath: "./tsconfig.app.json",
+            rollupTypes: true,
+        }),
+    ],
     build: {
         lib: {
             entry: resolve(__dirname, "src/index.ts"),
