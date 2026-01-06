@@ -1,6 +1,11 @@
+import { Client } from '@connectrpc/connect';
+import { DescService } from '@bufbuild/protobuf';
+
 export declare function bridgeCommand<T>(command: string, callback?: (value: T) => void): void;
 
 export declare function checkNightMode(): boolean;
+
+export declare function createProtoClient<T extends DescService>(service: T): Client<T>;
 
 export declare const pageTheme: ThemeInfo;
 

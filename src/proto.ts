@@ -1,6 +1,6 @@
 import type { DescService } from "@bufbuild/protobuf";
 import {
-    createClient as createClientBase,
+    createClient,
     type Client,
 } from "@connectrpc/connect";
 import { createConnectTransport } from "@connectrpc/connect-web";
@@ -20,6 +20,6 @@ const transport = createConnectTransport({
     },
 });
 
-export function createClient<T extends DescService>(service: T): Client<T> {
-    return createClientBase(service, transport);
+export function createProtoClient<T extends DescService>(service: T): Client<T> {
+    return createClient(service, transport);
 }
