@@ -1,7 +1,18 @@
-import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+import { defineConfig } from "vite";
+import { svelte } from "@sveltejs/vite-plugin-svelte";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [svelte()],
-})
+    plugins: [svelte()],
+    build: {
+        lib: {
+            entry: resolve(__dirname, "src/lib/main.js"),
+            name: "AnkiUtils",
+            fileName: "ankiutils",
+        },
+    },
+});
