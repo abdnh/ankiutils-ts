@@ -8,7 +8,7 @@
   ],
   "main": "dist/ankiutils.umd.cjs",
   "module": "dist/ankiutils.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/ankiutils.d.ts",
   
   "scripts": {
     "dev": "vite",
