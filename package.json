@@ -8,7 +8,7 @@
   ],
   "main": "dist/ankiutils.umd.cjs",
   "module": "dist/ankiutils.js",
-  "types": "dist/ankiutils.d.ts",
+  "types": "dist/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/ankiutils.js",

@@ -1,1 +1,2 @@
-export * from "./Spinner.svelte";
+import Spinner from "./Spinner.svelte";
+export { Spinner };
