@@ -1,7 +1,12 @@
 export function checkNightMode(): boolean {
     const nightMode = window.location.hash == "#night";
+    const theme = nightMode ? "dark" : "light";
+    // DaisyUI
+    document.documentElement.dataset.theme = theme;
     if (nightMode) {
+        // Standard Anki class
         document.documentElement.className = "night-mode";
+        // Bootstrap
         document.documentElement.dataset.bsTheme = "dark";
     }
     return nightMode;
