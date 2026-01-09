@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Dropdown from '$lib/components/Dropdown.svelte';
+	import ModalSelector from '$lib/components/ModalSelector.svelte';
 	import MultiSelect from '$lib/components/MultiSelect.svelte';
 	import Select from '$lib/components/Select.svelte';
 	import { pageTheme } from '$lib/theme.svelte';
@@ -11,10 +12,18 @@
 	}
 
 	let options = $state([
-		{ value: 'a', label: 'A' },
-		{ value: 'b', label: 'B' },
-		{ value: 'c', label: 'C' }
+		{ value: 'a', label: 'Apple' },
+		{ value: 'l', label: 'Lemon' },
+		{ value: 'b', label: 'Banana' },
+		{ value: 'o', label: 'Orange' },
+		{ value: 'g', label: 'Grape' },
+		{ value: 's', label: 'Strawberry' },
+		{ value: 'm', label: 'Mango' },
+		{ value: 'w', label: 'Watermelon' },
+		{ value: 'p', label: 'Pineapple' },
 	]);
+
+	let modalSelector: ModalSelector;
 </script>
 
 <label class="swap swap-rotate absolute right-2">
@@ -60,5 +69,9 @@
 		<MultiSelect {options} selectedOptions={[]} />
 		<Dropdown {options} selectedOptions={[]} label="Select" />
 		<Dropdown {options} selectedOptions={[]} label="Select" multiple={true} />
+
+		<ModalSelector {options} selectedOption="" bind:this={modalSelector} />
+		<button class="btn btn-primary" onclick={() => modalSelector.show()}>Open modal selector</button
+		>
 	</div>
 </div>
