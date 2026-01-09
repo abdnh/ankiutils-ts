@@ -3,4 +3,5 @@ import Select from './Select.svelte';
 import MultiSelect from './MultiSelect.svelte';
 import Dropdown from './Dropdown.svelte';
 import ModalSelector from './ModalSelector.svelte';
-export { Spinner, Select, MultiSelect, Dropdown, ModalSelector };
+import KeyboardInput from './KeyboardInput.svelte';
+export { Spinner, Select, MultiSelect, Dropdown, ModalSelector, KeyboardInput };

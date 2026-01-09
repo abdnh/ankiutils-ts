@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Dropdown from '$lib/components/Dropdown.svelte';
+	import KeyboardInput from '$lib/components/KeyboardInput.svelte';
 	import ModalSelector from '$lib/components/ModalSelector.svelte';
 	import MultiSelect from '$lib/components/MultiSelect.svelte';
 	import Select from '$lib/components/Select.svelte';
@@ -20,7 +21,7 @@
 		{ value: 's', label: 'Strawberry' },
 		{ value: 'm', label: 'Mango' },
 		{ value: 'w', label: 'Watermelon' },
-		{ value: 'p', label: 'Pineapple' },
+		{ value: 'p', label: 'Pineapple' }
 	]);
 
 	let modalSelector: ModalSelector;
@@ -73,5 +74,6 @@
 		<ModalSelector {options} selectedOption="" bind:this={modalSelector} />
 		<button class="btn btn-primary" onclick={() => modalSelector.show()}>Open modal selector</button
 		>
+		<KeyboardInput keys={[]}/>
 	</div>
 </div>
