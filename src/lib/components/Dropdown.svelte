@@ -1,5 +1,6 @@
 <script lang="ts">
-	import SelectOptions, { type SelectOption } from './SelectOptions.svelte';
+	import SelectOptions from './SelectOptions.svelte';
+	import { type SelectOption } from "./types.ts";
 
 	interface Props {
 		label: string;

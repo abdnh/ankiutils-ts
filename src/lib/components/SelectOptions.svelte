@@ -1,9 +1,5 @@
 <script lang="ts">
-	export interface SelectOption {
-		value: string;
-		label: string;
-	}
-
+	import { type SelectOption } from "./types.ts";
 	interface Props {
 		options: SelectOption[];
 		selectedOptions: string[];

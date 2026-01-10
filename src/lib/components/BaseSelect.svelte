@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { tick } from 'svelte';
-	import SelectOptions, { type SelectOption } from './SelectOptions.svelte';
-
+	import { type SelectOption } from './types.ts';
+	import SelectOptions from "./SelectOptions.svelte";
+	import { filterSelectOptions } from './utils.ts';
 	interface Props {
 		id?: string;
 		options: SelectOption[];
@@ -34,11 +35,7 @@
 	let inputElement: HTMLInputElement;
 	let optionElements: (HTMLButtonElement | HTMLInputElement)[] = $state([]);
 
-	let filteredOptions = $derived(
-		searchTerm
-			? options.filter((option) => option.label.toLowerCase().includes(searchTerm.toLowerCase()))
-			: options
-	);
+	let filteredOptions = $derived(filterSelectOptions(searchTerm, options));
 
 	let displayValue = $derived(
 		isOpen

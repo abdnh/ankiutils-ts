@@ -1,6 +1,6 @@
 <script lang="ts">
 	import BaseSelect from './BaseSelect.svelte';
-	import { type SelectOption } from './SelectOptions.svelte';
+	import { type SelectOption } from './types.ts';
 	interface Props {
 		id?: string;
 		options: SelectOption[];

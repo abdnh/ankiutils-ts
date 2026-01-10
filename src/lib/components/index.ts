@@ -1,5 +1,5 @@
 import Spinner from './Spinner.svelte';
-import type {SelectOption} from './SelectOptions.svelte';
+import type {SelectOption} from './types.ts';
 import Select from './Select.svelte';
 import MultiSelect from './MultiSelect.svelte';
 import Dropdown from './Dropdown.svelte';

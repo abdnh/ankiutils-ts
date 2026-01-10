@@ -1,12 +1,9 @@
 <script lang="ts">
-	export interface Option {
-		value: string;
-		label: string;
-	}
-
+	import { type SelectOption } from "./types.ts";
+	import { filterSelectOptions } from "./utils.ts";
 	interface Props {
 		selectedOption: string;
-		options: Option[];
+		options: SelectOption[];
 		placeholder?: string;
 		onSelected?: () => void;
 	}
@@ -18,15 +15,7 @@
 		placeholder = 'Search...'
 	}: Props = $props();
 	let search = $state('');
-	let filteredOptions = $derived.by(() =>
-		search
-			? options.filter(
-					(opt) =>
-						opt.value.toLowerCase().includes(search.toLowerCase()) ||
-						opt.label.toLowerCase().includes(search.toLowerCase())
-				)
-			: options
-	);
+	let filteredOptions = $derived(filterSelectOptions(search, options));
 	let selectedIndex = $derived.by(() => {
 		for (let i = 0; i < filteredOptions.length; i++) {
 			if (isOptionSelected(filteredOptions[i])) return i;
@@ -38,11 +27,11 @@
 	let modalElement: HTMLDialogElement;
 	let optionElements: HTMLButtonElement[] = $state([]);
 
-	function isOptionSelected(option: Option) {
+	function isOptionSelected(option: SelectOption) {
 		return option.value.toLowerCase() === selectedOption.toLowerCase();
 	}
 
-	function selectOption(language: Option) {
+	function selectOption(language: SelectOption) {
 		selectedOption = language.value;
 		modalElement.close();
 		onSelected?.();
