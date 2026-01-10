@@ -1,7 +1,7 @@
 export {};
 
 declare global {
-    interface Window {
-        qtWidgetId: string;
-    }
+	interface Window {
+		qtWidgetId: string;
+	}
 }

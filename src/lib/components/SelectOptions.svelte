@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { type SelectOption } from "./types.ts";
+	import { type SelectOption } from './types.ts';
 	interface Props {
 		options: SelectOption[];
 		selectedOptions: string[];

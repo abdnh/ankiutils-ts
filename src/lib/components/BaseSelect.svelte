@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { tick } from 'svelte';
 	import { type SelectOption } from './types.ts';
-	import SelectOptions from "./SelectOptions.svelte";
+	import SelectOptions from './SelectOptions.svelte';
 	import { filterSelectOptions } from './utils.ts';
 	interface Props {
 		id?: string;

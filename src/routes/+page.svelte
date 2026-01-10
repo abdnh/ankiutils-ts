@@ -74,6 +74,6 @@
 		<ModalSelector {options} selectedOption="" bind:this={modalSelector} />
 		<button class="btn btn-primary" onclick={() => modalSelector.show()}>Open modal selector</button
 		>
-		<KeyboardInput keys={[]}/>
+		<KeyboardInput keys={[]} />
 	</div>
 </div>
