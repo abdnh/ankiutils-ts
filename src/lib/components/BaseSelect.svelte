@@ -132,12 +132,12 @@
 	});
 </script>
 
-<div class="dropdown" bind:this={containerElement}>
+<div class="dropdown w-full" bind:this={containerElement}>
 	<div class="flex gap-2">
 		<input
 			bind:this={inputElement}
 			{id}
-			class="input select-input"
+			class="input select-input w-full"
 			type="text"
 			value={displayValue}
 			placeholder={isOpen ? searchPlaceholder : placeholder}

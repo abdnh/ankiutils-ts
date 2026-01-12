@@ -65,7 +65,7 @@
 
 	<button class="btn btn-primary mt-2">Click me</button>
 
-	<div class="flex gap-4 mt-4">
+	<div class="flex flex-col gap-4 mt-4">
 		<Select {options} />
 		<MultiSelect {options} selectedOptions={[]} />
 		<Dropdown {options} selectedOptions={[]} label="Select" />
