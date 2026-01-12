@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { type SelectOption } from './types.ts';
 	interface Props {
 		options: SelectOption[];
@@ -45,7 +46,7 @@
 			selectedOptions = [option.value];
 			closeDropdown();
 		}
-		onSelected?.(selectedOptions);
+		tick().then(() => onSelected?.(selectedOptions));
 	}
 </script>
 

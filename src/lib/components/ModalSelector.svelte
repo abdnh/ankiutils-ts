@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { tick } from 'svelte';
 	import { type SelectOption } from './types.ts';
 	import { filterSelectOptions } from './utils.ts';
 	interface Props {
@@ -34,7 +35,7 @@
 	function selectOption(language: SelectOption) {
 		selectedOption = language.value;
 		modalElement.close();
-		onSelected?.();
+		tick().then(() => onSelected?.());
 	}
 
 	export function show() {
