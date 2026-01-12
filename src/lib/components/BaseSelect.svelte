@@ -24,7 +24,7 @@
 		disabled = false,
 		clearable = false,
 		multiple = false,
-		onSelected = () => {}
+		onSelected: onSelectedBase = () => {}
 	}: Props = $props();
 
 	let searchTerm = $state('');
@@ -69,7 +69,7 @@
 		}
 		searchTerm = '';
 		inputElement?.focus();
-		onSelected(selectedOptions);
+		onSelectedBase(selectedOptions);
 	}
 
 	async function scrollHighlightedIntoView() {
@@ -122,6 +122,13 @@
 		if (containerElement && !containerElement.contains(event.target as Node)) {
 			selectOptionsComponent?.closeDropdown();
 		}
+	}
+
+	function onSelected() {
+		if (!multiple) {
+			selectOptionsComponent?.closeDropdown();
+		}
+		onSelectedBase(selectedOptions);
 	}
 
 	$effect(() => {
