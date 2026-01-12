@@ -50,7 +50,7 @@
 	}
 </script>
 
-<div class="menu dropdown-content bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm gap-1">
+<div class="menu dropdown-content flex-nowrap max-h-46 overflow-auto bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm gap-1">
 	{#if options.length === 0}
 		<div class="text-gray-400">No options found</div>
 	{:else}
