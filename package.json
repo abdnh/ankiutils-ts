@@ -60,7 +60,7 @@
 		"prettier-plugin-svelte": "^3.4.0",
 		"publint": "^0.3.15",
 		"sass": "^1.97.2",
-		"svelte": "^5.45.6",
+		"svelte": "^5.46.4",
 		"svelte-check": "^4.3.4",
 		"tailwindcss": "^4.1.18",
 		"typescript": "^5.9.3",
