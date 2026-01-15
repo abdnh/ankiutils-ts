@@ -69,7 +69,7 @@
 		<Select {options} />
 		<MultiSelect {options} selectedOptions={[]} />
 		<Dropdown {options} selectedOptions={[]} label="Select" />
-		<Dropdown {options} selectedOptions={[]} label="Select" multiple={true} />
+		<Dropdown {options} selectedOptions={[]} label="Select multiple" multiple={true} />
 
 		<ModalSelector {options} selectedOption="" bind:this={modalSelector} />
 		<button class="btn btn-primary" onclick={() => modalSelector.show()}>Open modal selector</button

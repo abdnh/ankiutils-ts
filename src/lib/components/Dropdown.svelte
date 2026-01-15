@@ -3,7 +3,7 @@
 	import { type SelectOption } from './types.ts';
 
 	interface Props {
-		label: string;
+		label?: string;
 		options: SelectOption[];
 		selectedOptions: string[];
 		multiple?: boolean;
@@ -21,7 +21,14 @@
 	let isOpen = $state(false);
 	let containerElement: HTMLDivElement;
 	let selectOptionsComponent: SelectOptions | undefined = $state();
-
+	let displayLabel = $derived.by(() => {
+		if (label) {
+			return label;
+		} else if (selectedOptions.length) {
+			return selectedOptions.join(', ');
+		}
+		return 'Select';
+	});
 	function handleClickOutside(event: MouseEvent) {
 		if (containerElement && !containerElement.contains(event.target as Node)) {
 			selectOptionsComponent?.closeDropdown();
@@ -38,7 +45,7 @@
 
 <div class="dropdown" bind:this={containerElement}>
 	<button class="btn" onclick={() => (isOpen = !isOpen)}>
-		<span>{label}</span>
+		<span>{displayLabel}</span>
 		<i class="bi bi-chevron-{isOpen ? 'up' : 'down'}"></i>
 	</button>
 	{#if isOpen}
