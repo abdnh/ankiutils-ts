@@ -5,6 +5,7 @@
 	import { filterSelectOptions } from './utils.ts';
 	interface Props {
 		id?: string;
+		className?: string,
 		options: SelectOption[];
 		selectedOptions: string[];
 		placeholder?: string;
@@ -17,6 +18,7 @@
 
 	let {
 		id,
+		className = "",
 		options,
 		selectedOptions = $bindable<string[]>([]),
 		placeholder = 'Select an option...',
@@ -139,7 +141,7 @@
 	});
 </script>
 
-<div class="dropdown w-full" bind:this={containerElement}>
+<div class="{className} dropdown w-full" bind:this={containerElement}>
 	<div class="flex gap-2">
 		<input
 			bind:this={inputElement}

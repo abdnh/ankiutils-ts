@@ -3,6 +3,7 @@
 	import { type SelectOption } from './types.ts';
 	interface Props {
 		id?: string;
+		className?: string,
 		options: SelectOption[];
 		value?: string;
 		placeholder?: string;
@@ -14,6 +15,7 @@
 
 	let {
 		id,
+		className,
 		options,
 		value = $bindable(''),
 		placeholder,
@@ -32,6 +34,7 @@
 
 <BaseSelect
 	{id}
+	{className}
 	{options}
 	bind:selectedOptions
 	{placeholder}

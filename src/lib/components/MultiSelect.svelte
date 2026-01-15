@@ -4,6 +4,7 @@
 
 	interface Props {
 		id?: string;
+		className?: string,
 		options: SelectOption[];
 		selectedOptions: string[];
 		placeholder?: string;
@@ -15,6 +16,7 @@
 
 	let {
 		id,
+		className,
 		options,
 		selectedOptions = $bindable<string[]>([]),
 		placeholder,
@@ -27,6 +29,7 @@
 
 <BaseSelect
 	{id}
+	{className}
 	{options}
 	bind:selectedOptions
 	{placeholder}
