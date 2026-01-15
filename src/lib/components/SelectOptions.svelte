@@ -51,7 +51,7 @@
 </script>
 
 <ul
-	class="menu dropdown-content flex-nowrap w-full max-h-58 overflow-auto bg-base-100 rounded-box z-1 p-2 shadow-sm gap-1"
+	class="menu dropdown-content flex-nowrap w-full overflow-auto bg-base-100 rounded-box z-1 p-2 shadow-sm gap-1"
 >
 	{#if options.length === 0}
 		<div class="text-gray-400">No options found</div>
