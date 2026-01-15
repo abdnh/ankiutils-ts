@@ -66,7 +66,7 @@
 					<input
 						bind:this={optionElements[index]}
 						type="checkbox"
-						class="btn"
+						class="btn w-full"
 						class:btn-primary={checked}
 						class:btn-outline={highlighted}
 						{checked}
@@ -77,7 +77,7 @@
 					<button
 						bind:this={optionElements[index]}
 						type="button"
-						class="btn"
+						class="btn w-full"
 						class:btn-primary={checked}
 						class:btn-outline={highlighted}
 						onclick={() => selectOption(option)}
