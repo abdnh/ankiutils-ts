@@ -191,6 +191,7 @@
 			options={filteredOptions}
 			bind:selectedOptions
 			{multiple}
+			{highlightedIndex}
 			{onSelected}
 			{onOpenDropdown}
 			{onCloseDropdown}

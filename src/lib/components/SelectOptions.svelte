@@ -6,6 +6,7 @@
 		selectedOptions: string[];
 		multiple?: boolean;
 		isOpen?: boolean;
+		highlightedIndex?: number,
 		onSelected?: (value: string[]) => void;
 		onOpenDropdown?: () => void;
 		onCloseDropdown?: () => void;
@@ -16,6 +17,7 @@
 		selectedOptions = $bindable<string[]>([]),
 		multiple = false,
 		isOpen = $bindable(false),
+		highlightedIndex,
 		onSelected,
 		onOpenDropdown,
 		onCloseDropdown
@@ -58,6 +60,7 @@
 	{:else}
 		{#each options as option, index (option.value)}
 			{@const checked = selectedOptions.includes(option.value)}
+			{@const highlighted = !checked && highlightedIndex === index}
 			<li>
 				{#if multiple}
 					<input
@@ -65,6 +68,7 @@
 						type="checkbox"
 						class="btn"
 						class:btn-primary={checked}
+						class:btn-outline={highlighted}
 						{checked}
 						aria-label={option.label}
 						onclick={() => selectOption(option)}
@@ -75,6 +79,7 @@
 						type="button"
 						class="btn"
 						class:btn-primary={checked}
+						class:btn-outline={highlighted}
 						onclick={() => selectOption(option)}
 					>
 						{option.label}
