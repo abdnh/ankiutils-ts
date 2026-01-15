@@ -50,34 +50,37 @@
 	}
 </script>
 
-<div class="menu dropdown-content flex-nowrap w-full max-h-58 overflow-auto bg-base-100 rounded-box z-1 p-2 shadow-sm gap-1">
+<ul
+	class="menu dropdown-content flex-nowrap w-full max-h-58 overflow-auto bg-base-100 rounded-box z-1 p-2 shadow-sm gap-1"
+>
 	{#if options.length === 0}
 		<div class="text-gray-400">No options found</div>
 	{:else}
 		{#each options as option, index (option.value)}
 			{@const checked = selectedOptions.includes(option.value)}
-
-			{#if multiple}
-				<input
-					bind:this={optionElements[index]}
-					type="checkbox"
-					class="btn"
-					class:btn-primary={checked}
-					{checked}
-					aria-label={option.label}
-					onclick={() => selectOption(option)}
-				/>
-			{:else}
-				<button
-					bind:this={optionElements[index]}
-					type="button"
-					class="btn"
-					class:btn-primary={checked}
-					onclick={() => selectOption(option)}
-				>
-					{option.label}
-				</button>
-			{/if}
+			<li>
+				{#if multiple}
+					<input
+						bind:this={optionElements[index]}
+						type="checkbox"
+						class="btn"
+						class:btn-primary={checked}
+						{checked}
+						aria-label={option.label}
+						onclick={() => selectOption(option)}
+					/>
+				{:else}
+					<button
+						bind:this={optionElements[index]}
+						type="button"
+						class="btn"
+						class:btn-primary={checked}
+						onclick={() => selectOption(option)}
+					>
+						{option.label}
+					</button>
+				{/if}
+			</li>
 		{/each}
 	{/if}
-</div>
+</ul>
